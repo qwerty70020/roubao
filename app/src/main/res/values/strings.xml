@@ -145,6 +145,19 @@
     <string name="btn_back">返回</string>
     <string name="btn_got_it">知道了</string>
 
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">肉包状态</string>
+    <string name="overlay_channel_desc">显示肉包执行状态</string>
+    <string name="overlay_notification_title">肉包运行中</string>
+    <string name="overlay_notification_text">正在执行自动化任务…</string>
+    <string name="overlay_default_text">肉包</string>
+    <string name="overlay_btn_stop">⏹ 停止</string>
+    <string name="overlay_btn_continue">✅ 继续</string>
+    <string name="overlay_btn_confirm">✅ 确认</string>
+    <string name="overlay_btn_cancel">❌ 取消</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
     <!-- Toast Messages -->
     <string name="toast_enter_instruction">请输入指令</string>
     <string name="toast_enter_api_key">请输入 API Key</string>

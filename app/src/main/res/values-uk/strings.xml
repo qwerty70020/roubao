@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Баоцзи</string>
+
+    <!-- Tab Titles -->
+    <string name="tab_home">Баоцзи</string>
+    <string name="tab_history">Історія</string>
+    <string name="tab_settings">Налаштування</string>
+
+    <!-- Home Screen -->
+    <string name="home_ready">Готово. Скажіть, що потрібно зробити</string>
+    <string name="home_connect_shizuku">Спочатку підключіть Shizuku</string>
+    <string name="home_try_these">Спробуйте ці команди</string>
+    <string name="home_input_placeholder">Скажіть Баоцзи, що ви хочете зробити…</string>
+    <string name="home_executing">Виконую крок %1$d</string>
+    <string name="home_send">Надіслати</string>
+    <string name="home_stop">Зупинити</string>
+
+    <!-- Preset Commands -->
+    <string name="preset_burger">Замовити бургер</string>
+    <string name="preset_burger_cmd">Замов мені смачний бургер поблизу</string>
+    <string name="preset_weibo">Опублікувати у Weibo</string>
+    <string name="preset_weibo_cmd">Опублікуй моє останнє фото у Weibo</string>
+    <string name="preset_bilibili">Дивитися Bilibili</string>
+    <string name="preset_bilibili_cmd">Я хочу подивитися популярні відео на Bilibili</string>
+    <string name="preset_takeout">Замовити їжу</string>
+    <string name="preset_takeout_cmd">Замов мені рис зі свининою через Meituan</string>
+    <string name="preset_music">Слухати музику</string>
+    <string name="preset_music_cmd">Відкрий NetEase Cloud Music і запусти щоденні рекомендації</string>
+    <string name="preset_message">Надіслати повідомлення</string>
+    <string name="preset_message_cmd">Надішли останньому контакту повідомлення, що я зайнятий</string>
+
+    <!-- History Screen -->
+    <string name="history_title">Історія виконання</string>
+    <string name="history_count">%1$d записів</string>
+    <string name="history_empty">Немає записів виконання</string>
+    <string name="history_empty_hint">Записи з\'являться тут після виконання завдань</string>
+    <string name="history_steps">%1$d кроків</string>
+    <string name="history_delete">Видалити</string>
+    <string name="history_delete_title">Видалити запис</string>
+    <string name="history_delete_confirm">Ви впевнені, що хочете видалити цей запис?</string>
+    <string name="history_timeline">Хронологія виконання</string>
+    <string name="history_instruction">Інструкція завдання</string>
+
+    <!-- Status -->
+    <string name="status_completed">Завершено</string>
+    <string name="status_failed">Не вдалося</string>
+    <string name="status_stopped">Зупинено</string>
+    <string name="status_running">Виконується</string>
+    <string name="status_label">Статус</string>
+    <string name="steps_label">Кроки</string>
+    <string name="duration_label">Тривалість</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Налаштування</string>
+    <string name="settings_subtitle">Налаштуйте API та параметри застосунку</string>
+
+    <!-- Settings - Appearance -->
+    <string name="settings_appearance">Зовнішній вигляд</string>
+    <string name="settings_theme">Режим теми</string>
+    <string name="theme_light">Світла тема</string>
+    <string name="theme_dark">Темна тема</string>
+    <string name="theme_system">Як у системі</string>
+    <string name="theme_select">Виберіть тему</string>
+
+    <!-- Settings - API -->
+    <string name="settings_api">Налаштування API</string>
+    <string name="settings_provider">Провайдер API</string>
+    <string name="settings_provider_custom">Власний</string>
+    <string name="settings_model">Модель</string>
+    <string name="settings_api_key">Ключ API</string>
+    <string name="settings_api_key_set">Задано (%1$s)</string>
+    <string name="settings_api_key_unset">Не задано</string>
+    <string name="settings_api_key_hint">Введіть ваш ключ API</string>
+    <string name="settings_show">Показати</string>
+    <string name="settings_hide">Сховати</string>
+
+    <!-- Settings - Custom Models -->
+    <string name="settings_custom_models">Власні моделі</string>
+    <string name="settings_add_model">Додати власну модель</string>
+    <string name="settings_add_model_hint">Додайте інші підтримувані моделі</string>
+    <string name="settings_model_name_hint">Введіть назву або ID моделі</string>
+    <string name="settings_model_name_example">напр., gpt-4-vision</string>
+    <string name="settings_select_model">Виберіть модель</string>
+
+    <!-- Settings - Help -->
+    <string name="settings_help">Довідка</string>
+    <string name="settings_shizuku_guide">Посібник Shizuku</string>
+    <string name="settings_shizuku_guide_desc">Дізнайтеся, як встановити й налаштувати Shizuku</string>
+    <string name="settings_overlay_help">Дозвіл на накладання</string>
+    <string name="settings_overlay_help_desc">Дізнайтеся, чому потрібен дозвіл на накладання</string>
+
+    <!-- Settings - About -->
+    <string name="settings_about">Про застосунок</string>
+    <string name="settings_version">Версія</string>
+    <string name="settings_app_desc">Інструмент автоматизації Android на основі VLM</string>
+
+    <!-- Shizuku Status -->
+    <string name="shizuku_connected">Shizuku підключено</string>
+    <string name="shizuku_not_connected">Shizuku не підключено</string>
+    <string name="shizuku_available">Керування пристроєм доступне</string>
+    <string name="shizuku_unavailable">Запустіть Shizuku та надайте дозвіл</string>
+
+    <!-- Shizuku Help -->
+    <string name="shizuku_help_step1_title">Завантажте Shizuku</string>
+    <string name="shizuku_help_step1_desc">Завантажте Shizuku з Google Play або GitHub\n\n• Google Play: шукайте \"Shizuku\"\n• GitHub: github.com/RikkaApps/Shizuku</string>
+    <string name="shizuku_help_step2_title">Запустіть Shizuku</string>
+    <string name="shizuku_help_step2_desc">Відкрийте Shizuku та виберіть спосіб запуску:\n\n• Бездротове налагодження (рекомендовано): потрібен Android 11+, увімкніть бездротове налагодження в параметрах розробника\n• Підключення до комп\'ютера: запуск через команду ADB</string>
+    <string name="shizuku_help_step3_title">Авторизуйте Баоцзи</string>
+    <string name="shizuku_help_step3_desc">Знайдіть Baozi Autopilot у розділі «Керування застосунками» Shizuku та натисніть «Авторизувати»</string>
+    <string name="shizuku_help_step4_title">Почніть користуватись</string>
+    <string name="shizuku_help_step4_desc">Після авторизації поверніться до Баоцзи. Картка статусу покаже «Shizuku підключено»</string>
+
+    <!-- Overlay Help -->
+    <string name="overlay_why">Навіщо потрібен дозвіл на накладання?</string>
+    <string name="overlay_reason">Баоцзи потребує дозволу на накладання під час виконання завдання, щоб:</string>
+    <string name="overlay_feature1">Показувати поточний прогрес виконання</string>
+    <string name="overlay_feature2">Надавати кнопку зупинки, щоб перервати завдання будь-коли</string>
+    <string name="overlay_feature3">Показувати інформацію про стан поверх інших застосунків</string>
+    <string name="overlay_how">Як увімкнути?</string>
+    <string name="overlay_how_desc">1. Під час виконання завдання з\'явиться підказка\n2. Або перейдіть: Налаштування > Застосунки > Баоцзи > Дозвіл на накладання\n3. Увімкніть «Поверх інших застосунків»</string>
+    <string name="overlay_privacy">Конфіденційність та безпека</string>
+    <string name="overlay_privacy_desc">Накладання показується лише під час виконання завдання й не збирає жодної особистої інформації. Після завершення завдання воно автоматично зникає.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome">Ласкаво просимо до Баоцзи</string>
+    <string name="onboarding_welcome_desc">Баоцзи — це розумний асистент автоматизації,\nякий допомагає керувати телефоном для виконання різних завдань</string>
+    <string name="onboarding_ai">На основі ШІ</string>
+    <string name="onboarding_ai_desc">На основі передових візуально-мовних моделей\nБаоцзи розуміє вміст екрана й ухвалює розумні рішення</string>
+    <string name="onboarding_easy">Простий у використанні</string>
+    <string name="onboarding_easy_desc">Просто опишіть природною мовою, що потрібно зробити,\nі Баоцзи виконає це за вас</string>
+    <string name="onboarding_safe">Безпечний і надійний</string>
+    <string name="onboarding_safe_desc">Автоматично зупиняється на чутливих сторінках\n(наприклад, оплата, паролі), щоб захистити ваш обліковий запис</string>
+    <string name="onboarding_skip">Пропустити</string>
+    <string name="onboarding_next">Далі</string>
+    <string name="onboarding_start">Почати</string>
+
+    <!-- Common -->
+    <string name="btn_confirm">Підтвердити</string>
+    <string name="btn_cancel">Скасувати</string>
+    <string name="btn_close">Закрити</string>
+    <string name="btn_add">Додати</string>
+    <string name="btn_delete">Видалити</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_got_it">Зрозуміло</string>
+
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">Статус Баоцзи</string>
+    <string name="overlay_channel_desc">Показує стан виконання Баоцзи</string>
+    <string name="overlay_notification_title">Баоцзи запущено</string>
+    <string name="overlay_notification_text">Виконується автоматизація…</string>
+    <string name="overlay_default_text">Баоцзи</string>
+    <string name="overlay_btn_stop">⏹ Зупинити</string>
+    <string name="overlay_btn_continue">✅ Продовжити</string>
+    <string name="overlay_btn_confirm">✅ Підтвердити</string>
+    <string name="overlay_btn_cancel">❌ Скасувати</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
+    <!-- Toast Messages -->
+    <string name="toast_enter_instruction">Введіть інструкцію</string>
+    <string name="toast_enter_api_key">Введіть ключ API</string>
+    <string name="toast_grant_overlay">Надайте дозвіл на накладання</string>
+    <string name="toast_shizuku_granted">Дозвіл Shizuku отримано</string>
+    <string name="toast_start_shizuku">Спочатку запустіть застосунок Shizuku</string>
+    <string name="toast_shizuku_old">Версія Shizuku застаріла</string>
+    <string name="toast_task_complete">Завдання виконано</string>
+    <string name="toast_user_stopped">Зупинено користувачем</string>
+    <string name="toast_sensitive_page">Виявлено чутливу сторінку (оплата/пароль), безпечно зупинено</string>
+    <string name="toast_max_steps">Досягнуто ліміт кроків</string>
+    <string name="toast_error">Помилка: %1$s</string>
+</resources>

@@ -145,6 +145,19 @@
     <string name="btn_back">Back</string>
     <string name="btn_got_it">Got it</string>
 
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">Baozi Status</string>
+    <string name="overlay_channel_desc">Shows Baozi execution status</string>
+    <string name="overlay_notification_title">Baozi Running</string>
+    <string name="overlay_notification_text">Executing automation task…</string>
+    <string name="overlay_default_text">Baozi</string>
+    <string name="overlay_btn_stop">⏹ Stop</string>
+    <string name="overlay_btn_continue">✅ Continue</string>
+    <string name="overlay_btn_confirm">✅ Confirm</string>
+    <string name="overlay_btn_cancel">❌ Cancel</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
     <!-- Toast Messages -->
     <string name="toast_enter_instruction">Please enter an instruction</string>
     <string name="toast_enter_api_key">Please enter API Key</string>
