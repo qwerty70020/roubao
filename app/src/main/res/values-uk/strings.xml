@@ -170,4 +170,150 @@
     <string name="toast_sensitive_page">Виявлено чутливу сторінку (оплата/пароль), безпечно зупинено</string>
     <string name="toast_max_steps">Досягнуто ліміт кроків</string>
     <string name="toast_error">Помилка: %1$s</string>
+    <string name="toast_checking_shizuku">Перевіряємо стан Shizuku…</string>
+    <string name="toast_authorize_shizuku_popup">Надайте дозвіл Shizuku у діалозі</string>
+    <string name="toast_task_stopped">Завдання зупинено</string>
+    <string name="toast_api_key_required">Спочатку задайте ключ API</string>
+    <string name="toast_models_loaded">Завантажено %1$d моделей</string>
+    <string name="toast_fetch_failed">Не вдалося отримати: %1$s</string>
+    <string name="toast_logs_cleared">Журнали очищено</string>
+
+    <!-- Status extra -->
+    <string name="status_cancelled">Скасовано</string>
+
+    <!-- Home extras -->
+    <string name="home_refresh_shizuku">Оновити стан Shizuku</string>
+    <string name="home_stop_execution">Зупинити виконання</string>
+    <string name="home_result_cancelled">Скасовано</string>
+
+    <!-- History extras -->
+    <string name="history_steps_short">%1$d кр.</string>
+    <string name="history_no_steps">Немає кроків виконання</string>
+    <string name="history_no_logs">Немає записів журналу</string>
+    <string name="history_tab_timeline">Хронологія</string>
+    <string name="history_tab_logs">Журнал</string>
+    <string name="history_instruction_label">Інструкція завдання</string>
+    <string name="history_delete_confirm_btn">Видалити</string>
+    <string name="history_empty_emoji">📝</string>
+    <string name="step_label">Крок %1$d</string>
+
+    <!-- Generated titles -->
+    <string name="title_open_app">Відкрити застосунок</string>
+    <string name="title_order">Замовлення</string>
+    <string name="title_send_message">Надіслати повідомлення</string>
+    <string name="title_browse">Перегляд вмісту</string>
+    <string name="title_search">Пошук</string>
+    <string name="title_settings">Налаштування</string>
+    <string name="title_play_media">Відтворити медіа</string>
+    <string name="title_task">Завдання</string>
+
+    <!-- Capabilities screen -->
+    <string name="capabilities_title">Можливості</string>
+    <string name="capabilities_subtitle">%1$d агентів, %2$d інструментів</string>
+    <string name="capabilities_tab_agents">Агенти (%1$d)</string>
+    <string name="capabilities_tab_tools">Інструменти (%1$d)</string>
+    <string name="capabilities_arch_title">🧠 Архітектура кількох агентів</string>
+    <string name="capabilities_arch_desc">Баоцзи використовує архітектуру співпраці кількох агентів. Кожен агент відповідає за свій напрямок і разом вони виконують складні завдання з автоматизації телефону.</string>
+    <string name="capabilities_responsibilities">Обовʼязки</string>
+    <string name="capabilities_expand">Розгорнути</string>
+    <string name="capabilities_collapse">Згорнути</string>
+    <string name="capabilities_no_tools">Інструменти відсутні</string>
+    <string name="capabilities_empty_emoji">📦</string>
+
+    <!-- Settings screen extras -->
+    <string name="settings_section_exec">Виконання</string>
+    <string name="settings_section_shizuku_advanced">Shizuku додатково</string>
+    <string name="settings_section_feedback">Відгук і діагностика</string>
+    <string name="settings_max_steps">Макс. кількість кроків</string>
+    <string name="settings_max_steps_value">%1$d кроків</string>
+    <string name="settings_max_steps_desc">Задайте максимальну кількість кроків для одного завдання. Більше кроків — складніші задачі, але більше витрачених токенів.</string>
+    <string name="settings_shizuku_privilege_title">Поточний рівень доступу</string>
+    <string name="settings_shizuku_privilege_root">Режим Root (UID 0)</string>
+    <string name="settings_shizuku_privilege_adb">Режим ADB (UID 2000)</string>
+    <string name="settings_shizuku_privilege_none">Не підключено</string>
+    <string name="settings_root_mode">Режим Root</string>
+    <string name="settings_root_mode_need">Потрібно, щоб Shizuku працював з правами Root</string>
+    <string name="settings_root_mode_on">Розширені права увімкнено</string>
+    <string name="settings_root_mode_off">Увімкніть, щоб користуватися Root</string>
+    <string name="settings_su_command">Дозволити команди su -c</string>
+    <string name="settings_su_command_on">ШІ може виконувати Root-команди</string>
+    <string name="settings_su_command_off">su -c заборонено</string>
+    <string name="settings_cloud_crash">Хмарні звіти про збої</string>
+    <string name="settings_cloud_crash_on">Увімкнено — допомагає покращувати застосунок</string>
+    <string name="settings_cloud_crash_off">Вимкнено</string>
+    <string name="settings_export_logs">Експортувати журнали</string>
+    <string name="settings_clear_logs">Очистити журнали</string>
+    <string name="settings_clear_logs_desc">Видалити всі локальні файли журналів</string>
+    <string name="settings_clear_logs_title">Підтвердити очищення</string>
+    <string name="settings_clear_logs_confirm">Видалити всі файли журналів?</string>
+    <string name="settings_about_app_title">Баоцзи Autopilot</string>
+    <string name="settings_model_default_desc">Візуальна модель Aliyun Qwen</string>
+    <string name="settings_model_recommended">Рекомендовані</string>
+    <string name="settings_model_custom">Власна модель</string>
+    <string name="settings_model_custom_hint">Введіть назву моделі, наприклад gpt-4o</string>
+    <string name="settings_fetch_models">Отримати моделі з API</string>
+    <string name="settings_fetching">Отримуємо…</string>
+    <string name="settings_api_models_list">Моделі API (%1$d)</string>
+    <string name="settings_search_models">Шукати моделі…</string>
+    <string name="settings_no_models_set_key">Спочатку задайте ключ API</string>
+    <string name="settings_no_models_fetch">Натисніть «Отримати з API», щоб завантажити список</string>
+    <string name="settings_no_match">Моделі не знайдено за запитом «%1$s»</string>
+    <string name="settings_models_found">Знайдено %1$d моделей</string>
+    <string name="settings_provider_title">Постачальник API</string>
+    <string name="settings_provider_desc">Оберіть провайдера API (сумісні з OpenAI)</string>
+    <string name="settings_custom_url_hint_mai">http://your-server:8000/v1</string>
+    <string name="settings_custom_url_hint">https://api.example.com/v1</string>
+    <string name="settings_custom_url_desc_mai">Залиште порожнім для localhost:8000</string>
+    <string name="settings_custom_url_desc">Введіть власну адресу API</string>
+    <string name="settings_done">Готово</string>
+    <string name="settings_root_warning_title">Увімкнути Root-режим</string>
+    <string name="settings_root_warning_msg">Режим Root дає застосунку вищі системні права.</string>
+    <string name="settings_warning_label">Увага:</string>
+    <string name="settings_root_warning_bullet1">Root-доступ може призвести до нестабільної роботи</string>
+    <string name="settings_root_warning_bullet2">Невдалі дії можуть зіпсувати дані пристрою</string>
+    <string name="settings_root_warning_bullet3">Переконайтеся, що розумієте ризики</string>
+    <string name="settings_root_warning_end">Вмикайте цю опцію лише якщо повністю усвідомлюєте ризики й вам потрібні розширені функції.</string>
+    <string name="settings_understand_enable">Я розумію, увімкнути</string>
+    <string name="settings_su_warning_title">Дозволити команди su -c</string>
+    <string name="settings_su_warning_msg">Ця опція дозволяє ШІ виконувати команди su -c, тобто будь-які shell-команди з правами Root.</string>
+    <string name="settings_extreme_warning">Надзвичайна небезпека:</string>
+    <string name="settings_su_warning_bullet1">ШІ може виконати небезпечні системні команди</string>
+    <string name="settings_su_warning_bullet2">Можлива втрата даних або пошкодження системи</string>
+    <string name="settings_su_warning_bullet3">Може бути використано шкідливими інструкціями</string>
+    <string name="settings_su_warning_bullet4">Не рекомендовано для щоденного використання</string>
+    <string name="settings_su_warning_end">Наполегливо радимо: використовуйте лише в повністю контрольованому середовищі й вимкніть одразу після завершення.</string>
+    <string name="shizuku_download_btn">Завантажити Shizuku</string>
+
+    <!-- Capabilities - Agents -->
+    <string name="agent_manager_role">Планувальник</string>
+    <string name="agent_manager_desc">Розуміє намір користувача, будує високорівневий план виконання та стежить за прогресом завдання.</string>
+    <string name="agent_manager_r1">Аналізує запит користувача і розпізнає справжній намір</string>
+    <string name="agent_manager_r2">Розбиває складне завдання на підзавдання</string>
+    <string name="agent_manager_r3">Планує послідовність кроків виконання</string>
+    <string name="agent_manager_r4">Динамічно коригує план на основі зворотного зв\'язку</string>
+    <string name="agent_executor_role">Виконавець</string>
+    <string name="agent_executor_desc">Аналізує поточний стан екрана та обирає конкретні дії в інтерфейсі.</string>
+    <string name="agent_executor_r1">Аналізує скріншоти й розпізнає елементи інтерфейсу</string>
+    <string name="agent_executor_r2">Обирає наступний крок згідно з планом</string>
+    <string name="agent_executor_r3">Визначає дотики, свайпи, введення тексту тощо</string>
+    <string name="agent_executor_r4">Видає точні координати й параметри дії</string>
+    <string name="agent_reflector_role">Рефлектор</string>
+    <string name="agent_reflector_desc">Оцінює результат кожної дії та визначає, чи вона успішна.</string>
+    <string name="agent_reflector_r1">Порівнює екран до й після дії</string>
+    <string name="agent_reflector_r2">Визначає, чи досягнуто очікуваний результат</string>
+    <string name="agent_reflector_r3">Виявляє аномалії (діалоги, помилки)</string>
+    <string name="agent_reflector_r4">Дає зворотний зв\'язок для коригування стратегії</string>
+    <string name="agent_notetaker_role">Нотатник</string>
+    <string name="agent_notetaker_desc">Фіксує ключову інформацію під час виконання, щоб нею могли користуватися інші агенти.</string>
+    <string name="agent_notetaker_r1">Записує важливі контрольні точки виконання</string>
+    <string name="agent_notetaker_r2">Зберігає проміжні результати та стан</string>
+    <string name="agent_notetaker_r3">Надає контекст для наступних кроків</string>
+    <string name="agent_notetaker_r4">Формує підсумки й журнал виконання</string>
+
+    <!-- Capabilities - Built-in tools -->
+    <string name="tool_screenshot_desc">Знімок поточного екрана для аналізу ШІ</string>
+    <string name="tool_tap_desc">Дотик до екрана в заданих координатах</string>
+    <string name="tool_swipe_desc">Свайп у будь-якому напрямку</string>
+    <string name="tool_type_desc">Ввід тексту у поточне поле</string>
+    <string name="tool_press_key_desc">Натискання системної клавіші (Home, Back, Enter, …)</string>
 </resources>

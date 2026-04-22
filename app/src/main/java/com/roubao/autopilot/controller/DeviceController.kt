@@ -143,16 +143,17 @@ class DeviceController(private val context: Context? = null) {
      * 执行 shell 命令 (本地，无权限)
      */
     private fun execLocal(command: String): String {
+        var process: Process? = null
         return try {
-            val process = Runtime.getRuntime().exec(arrayOf("sh", "-c", command))
-            val reader = BufferedReader(InputStreamReader(process.inputStream))
-            val output = reader.readText()
+            process = Runtime.getRuntime().exec(arrayOf("sh", "-c", command))
+            val output = BufferedReader(InputStreamReader(process.inputStream)).use { it.readText() }
             process.waitFor()
-            reader.close()
             output
         } catch (e: Exception) {
             e.printStackTrace()
             ""
+        } finally {
+            try { process?.destroy() } catch (_: Exception) {}
         }
     }
 
@@ -366,15 +367,19 @@ class DeviceController(private val context: Context? = null) {
             // 如果无法直接读取，通过 shell cat 读取二进制数据
             println("[DeviceController] Cannot read directly, trying shell cat...")
             val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "cat $SCREENSHOT_PATH"))
-            val bytes = process.inputStream.readBytes()
-            process.waitFor()
+            try {
+                val bytes = process.inputStream.use { it.readBytes() }
+                process.waitFor()
 
-            if (bytes.isNotEmpty()) {
-                println("[DeviceController] Read ${bytes.size} bytes via shell")
-                val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-                if (bitmap != null) {
-                    return@withContext ScreenshotResult(bitmap)
+                if (bytes.isNotEmpty()) {
+                    println("[DeviceController] Read ${bytes.size} bytes via shell")
+                    val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                    if (bitmap != null) {
+                        return@withContext ScreenshotResult(bitmap)
+                    }
                 }
+            } finally {
+                try { process.destroy() } catch (_: Exception) {}
             }
 
             println("[DeviceController] Screenshot file empty or not accessible, returning fallback")
@@ -420,15 +425,19 @@ class DeviceController(private val context: Context? = null) {
             // 如果无法直接读取，通过 shell cat 读取二进制数据
             println("[DeviceController] Cannot read directly, trying shell cat...")
             val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "cat $SCREENSHOT_PATH"))
-            val bytes = process.inputStream.readBytes()
-            process.waitFor()
+            try {
+                val bytes = process.inputStream.use { it.readBytes() }
+                process.waitFor()
 
-            if (bytes.isNotEmpty()) {
-                println("[DeviceController] Read ${bytes.size} bytes via shell")
-                BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-            } else {
-                println("[DeviceController] Screenshot file empty or not accessible")
-                null
+                if (bytes.isNotEmpty()) {
+                    println("[DeviceController] Read ${bytes.size} bytes via shell")
+                    BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                } else {
+                    println("[DeviceController] Screenshot file empty or not accessible")
+                    null
+                }
+            } finally {
+                try { process.destroy() } catch (_: Exception) {}
             }
         } catch (e: Exception) {
             e.printStackTrace()

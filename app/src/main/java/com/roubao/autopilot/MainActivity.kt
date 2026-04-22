@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.StringRes
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
@@ -20,6 +21,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
@@ -27,7 +29,6 @@ import androidx.lifecycle.lifecycleScope
 import android.net.Uri
 import android.provider.Settings
 import com.roubao.autopilot.agent.MobileAgent
-import com.roubao.autopilot.controller.AppScanner
 import com.roubao.autopilot.controller.DeviceController
 import com.roubao.autopilot.data.*
 import com.roubao.autopilot.ui.screens.*
@@ -37,18 +38,22 @@ import androidx.core.view.WindowCompat
 import com.roubao.autopilot.vlm.GUIOwlClient
 import com.roubao.autopilot.vlm.MAIUIClient
 import com.roubao.autopilot.vlm.VLMClient
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
 import android.util.Log
 
 private const val TAG = "MainActivity"
 
-sealed class Screen(val route: String, val title: String, val icon: ImageVector, val selectedIcon: ImageVector) {
-    object Home : Screen("home", "肉包", Icons.Outlined.Home, Icons.Filled.Home)
-    object Capabilities : Screen("capabilities", "能力", Icons.Outlined.Star, Icons.Filled.Star)
-    object History : Screen("history", "记录", Icons.Outlined.List, Icons.Filled.List)
-    object Settings : Screen("settings", "设置", Icons.Outlined.Settings, Icons.Filled.Settings)
+sealed class Screen(
+    val route: String,
+    @StringRes val titleRes: Int,
+    val icon: ImageVector,
+    val selectedIcon: ImageVector
+) {
+    object Home : Screen("home", R.string.tab_home, Icons.Outlined.Home, Icons.Filled.Home)
+    object Capabilities : Screen("capabilities", R.string.capabilities_title, Icons.Outlined.Star, Icons.Filled.Star)
+    object History : Screen("history", R.string.tab_history, Icons.Outlined.List, Icons.Filled.List)
+    object Settings : Screen("settings", R.string.tab_settings, Icons.Outlined.Settings, Icons.Filled.Settings)
 }
 
 class MainActivity : ComponentActivity() {
@@ -95,7 +100,7 @@ class MainActivity : ComponentActivity() {
         Log.d(TAG, "Shizuku permission result: $grantResult")
         if (grantResult == PackageManager.PERMISSION_GRANTED) {
             deviceController.bindService()
-            Toast.makeText(this, "Shizuku 权限已获取", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_shizuku_granted), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -126,11 +131,6 @@ class MainActivity : ComponentActivity() {
 
         // 检查 Shizuku 状态
         checkAndUpdateShizukuStatus()
-
-        // 预加载已安装应用
-        lifecycleScope.launch(Dispatchers.IO) {
-            AppScanner(this@MainActivity).getApps()
-        }
 
         setContent {
             val settings by settingsManager.settings.collectAsState()
@@ -213,14 +213,15 @@ class MainActivity : ComponentActivity() {
                     ) {
                         listOf(Screen.Home, Screen.Capabilities, Screen.History, Screen.Settings).forEach { screen ->
                             val selected = currentScreen == screen
+                            val screenTitle = stringResource(screen.titleRes)
                             NavigationBarItem(
                                 icon = {
                                     Icon(
                                         imageVector = if (selected) screen.selectedIcon else screen.icon,
-                                        contentDescription = screen.title
+                                        contentDescription = screenTitle
                                     )
                                 },
-                                label = { Text(screen.title) },
+                                label = { Text(screenTitle) },
                                 selected = selected,
                                 onClick = { currentScreen = screen },
                                 colors = NavigationBarItemDefaults.colors(
@@ -399,32 +400,32 @@ class MainActivity : ComponentActivity() {
 
     private fun refreshShizukuStatus() {
         Log.d(TAG, "refreshShizukuStatus called by user")
-        Toast.makeText(this, "正在检查 Shizuku 状态...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_checking_shizuku), Toast.LENGTH_SHORT).show()
         checkAndUpdateShizukuStatus()
 
         if (shizukuAvailable.value && checkShizukuPermission()) {
-            Toast.makeText(this, "Shizuku 已连接", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.shizuku_connected), Toast.LENGTH_SHORT).show()
         } else if (shizukuAvailable.value) {
-            Toast.makeText(this, "请在弹窗中授权 Shizuku", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_authorize_shizuku_popup), Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "请先启动 Shizuku App", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_start_shizuku), Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun requestShizukuPermission() {
         try {
             if (!Shizuku.pingBinder()) {
-                Toast.makeText(this, "请先启动 Shizuku App", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_start_shizuku), Toast.LENGTH_SHORT).show()
                 return
             }
 
             if (Shizuku.isPreV11()) {
-                Toast.makeText(this, "Shizuku 版本过低", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_shizuku_old), Toast.LENGTH_SHORT).show()
                 return
             }
 
             if (Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Shizuku 权限已获取", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_shizuku_granted), Toast.LENGTH_SHORT).show()
                 shizukuAvailable.value = true
                 deviceController.bindService()
                 return
@@ -432,7 +433,7 @@ class MainActivity : ComponentActivity() {
 
             Shizuku.requestPermission(0)
         } catch (e: Exception) {
-            Toast.makeText(this, "请先启动 Shizuku App", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_start_shizuku), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -446,19 +447,19 @@ class MainActivity : ComponentActivity() {
         providerId: String = ""
     ) {
         if (instruction.isBlank()) {
-            Toast.makeText(this, "请输入指令", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_enter_instruction), Toast.LENGTH_SHORT).show()
             return
         }
         // MAI-UI 本地部署不需要 API Key
         val requiresApiKey = providerId != "mai_ui"
         if (requiresApiKey && apiKey.isBlank()) {
-            Toast.makeText(this, "请输入 API Key", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_enter_api_key), Toast.LENGTH_SHORT).show()
             return
         }
 
         // 检查悬浮窗权限
         if (!Settings.canDrawOverlays(this)) {
-            Toast.makeText(this, "请授予悬浮窗权限", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.toast_grant_overlay), Toast.LENGTH_LONG).show()
             val intent = android.content.Intent(
                 Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:$packageName")
@@ -570,7 +571,7 @@ class MainActivity : ComponentActivity() {
                         status = ExecutionStatus.STOPPED,
                         steps = steps,
                         logs = currentLogs,
-                        resultMessage = "已取消"
+                        resultMessage = getString(R.string.status_cancelled)
                     )
                     executionRepository.saveRecord(updatedRecord)
                     executionRecords.value = executionRepository.getAllRecords()
@@ -578,7 +579,7 @@ class MainActivity : ComponentActivity() {
                     // 重置执行状态
                     isExecuting.value = false
 
-                    Toast.makeText(this@MainActivity, "任务已停止", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, getString(R.string.toast_task_stopped), Toast.LENGTH_SHORT).show()
                     mobileAgent.value?.clearLogs()
 
                     // 触发跳转到记录详情页
@@ -591,7 +592,7 @@ class MainActivity : ComponentActivity() {
                     endTime = System.currentTimeMillis(),
                     status = ExecutionStatus.FAILED,
                     logs = currentLogs,
-                    resultMessage = "错误: ${e.message}"
+                    resultMessage = getString(R.string.toast_error, e.message ?: "")
                 )
                 executionRepository.saveRecord(updatedRecord)
                 executionRecords.value = executionRepository.getAllRecords()
@@ -599,7 +600,7 @@ class MainActivity : ComponentActivity() {
                 // 重置执行状态
                 isExecuting.value = false
 
-                Toast.makeText(this@MainActivity, "错误: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, getString(R.string.toast_error, e.message ?: ""), Toast.LENGTH_LONG).show()
 
                 // 延迟3秒后清空日志，恢复默认状态
                 kotlinx.coroutines.delay(3000)
@@ -609,19 +610,20 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun generateTitle(instruction: String): String {
-        // 生成简短标题
+        // 生成简短标题（按关键词匹配，兼容中/英/乌）
         val keywords = listOf(
-            "打开" to "打开应用",
-            "点" to "点餐",
-            "发" to "发送消息",
-            "看" to "浏览内容",
-            "搜" to "搜索",
-            "设置" to "调整设置",
-            "播放" to "播放媒体"
+            listOf("打开", "open", "відкр") to R.string.title_open_app,
+            listOf("点餐", "order", "замов") to R.string.title_order,
+            listOf("发", "send", "надісл", "відправ") to R.string.title_send_message,
+            listOf("看", "browse", "перегля") to R.string.title_browse,
+            listOf("搜", "search", "шук") to R.string.title_search,
+            listOf("设置", "settings", "налашт") to R.string.title_settings,
+            listOf("播放", "play", "відтвор") to R.string.title_play_media
         )
-        for ((key, title) in keywords) {
-            if (instruction.contains(key)) {
-                return title
+        val lower = instruction.lowercase()
+        for ((keys, titleRes) in keywords) {
+            if (keys.any { lower.contains(it) }) {
+                return getString(titleRes)
             }
         }
         return if (instruction.length > 10) instruction.take(10) + "..." else instruction
