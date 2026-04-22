@@ -2,6 +2,8 @@ package com.roubao.autopilot.data
 
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
@@ -132,12 +134,12 @@ class ExecutionRepository(private val context: Context) {
     private val historyFile: File
         get() = File(context.filesDir, "execution_history.json")
 
-    /**
-     * 获取所有记录
-     */
-    suspend fun getAllRecords(): List<ExecutionRecord> = withContext(Dispatchers.IO) {
-        try {
-            if (!historyFile.exists()) return@withContext emptyList()
+    // 串行化文件读写，避免并发保存时的数据丢失（read-modify-write 竞态）
+    private val fileMutex = Mutex()
+
+    private fun readAllLocked(): List<ExecutionRecord> {
+        return try {
+            if (!historyFile.exists()) return emptyList()
             val json = historyFile.readText()
             val array = JSONArray(json)
             val records = mutableListOf<ExecutionRecord>()
@@ -152,32 +154,41 @@ class ExecutionRepository(private val context: Context) {
     }
 
     /**
+     * 获取所有记录
+     */
+    suspend fun getAllRecords(): List<ExecutionRecord> = withContext(Dispatchers.IO) {
+        fileMutex.withLock { readAllLocked() }
+    }
+
+    /**
      * 获取单条记录
      */
     suspend fun getRecord(id: String): ExecutionRecord? = withContext(Dispatchers.IO) {
-        getAllRecords().find { it.id == id }
+        fileMutex.withLock { readAllLocked().find { it.id == id } }
     }
 
     /**
      * 保存记录
      */
     suspend fun saveRecord(record: ExecutionRecord) = withContext(Dispatchers.IO) {
-        try {
-            val records = getAllRecords().toMutableList()
-            val existingIndex = records.indexOfFirst { it.id == record.id }
-            if (existingIndex >= 0) {
-                records[existingIndex] = record
-            } else {
-                records.add(0, record)
+        fileMutex.withLock {
+            try {
+                val records = readAllLocked().toMutableList()
+                val existingIndex = records.indexOfFirst { it.id == record.id }
+                if (existingIndex >= 0) {
+                    records[existingIndex] = record
+                } else {
+                    records.add(0, record)
+                }
+                // 只保留最近100条记录
+                val trimmedRecords = records.take(100)
+                val array = JSONArray().apply {
+                    trimmedRecords.forEach { put(it.toJson()) }
+                }
+                historyFile.writeText(array.toString())
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            // 只保留最近100条记录
-            val trimmedRecords = records.take(100)
-            val array = JSONArray().apply {
-                trimmedRecords.forEach { put(it.toJson()) }
-            }
-            historyFile.writeText(array.toString())
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
     }
 
@@ -185,14 +196,16 @@ class ExecutionRepository(private val context: Context) {
      * 删除记录
      */
     suspend fun deleteRecord(id: String) = withContext(Dispatchers.IO) {
-        try {
-            val records = getAllRecords().filter { it.id != id }
-            val array = JSONArray().apply {
-                records.forEach { put(it.toJson()) }
+        fileMutex.withLock {
+            try {
+                val records = readAllLocked().filter { it.id != id }
+                val array = JSONArray().apply {
+                    records.forEach { put(it.toJson()) }
+                }
+                historyFile.writeText(array.toString())
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            historyFile.writeText(array.toString())
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
     }
 
@@ -200,10 +213,12 @@ class ExecutionRepository(private val context: Context) {
      * 清空所有记录
      */
     suspend fun clearAll() = withContext(Dispatchers.IO) {
-        try {
-            historyFile.delete()
-        } catch (e: Exception) {
-            e.printStackTrace()
+        fileMutex.withLock {
+            try {
+                historyFile.delete()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 }

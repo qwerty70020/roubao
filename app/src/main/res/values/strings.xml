@@ -145,6 +145,19 @@
     <string name="btn_back">返回</string>
     <string name="btn_got_it">知道了</string>
 
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">肉包状态</string>
+    <string name="overlay_channel_desc">显示肉包执行状态</string>
+    <string name="overlay_notification_title">肉包运行中</string>
+    <string name="overlay_notification_text">正在执行自动化任务…</string>
+    <string name="overlay_default_text">肉包</string>
+    <string name="overlay_btn_stop">⏹ 停止</string>
+    <string name="overlay_btn_continue">✅ 继续</string>
+    <string name="overlay_btn_confirm">✅ 确认</string>
+    <string name="overlay_btn_cancel">❌ 取消</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
     <!-- Toast Messages -->
     <string name="toast_enter_instruction">请输入指令</string>
     <string name="toast_enter_api_key">请输入 API Key</string>
@@ -157,4 +170,150 @@
     <string name="toast_sensitive_page">检测到敏感页面（支付/密码），已安全停止</string>
     <string name="toast_max_steps">达到最大步数限制</string>
     <string name="toast_error">错误: %1$s</string>
+    <string name="toast_checking_shizuku">正在检查 Shizuku 状态…</string>
+    <string name="toast_authorize_shizuku_popup">请在弹窗中授权 Shizuku</string>
+    <string name="toast_task_stopped">任务已停止</string>
+    <string name="toast_api_key_required">请先设置 API Key</string>
+    <string name="toast_models_loaded">获取到 %1$d 个模型</string>
+    <string name="toast_fetch_failed">获取失败: %1$s</string>
+    <string name="toast_logs_cleared">日志已清除</string>
+
+    <!-- Status extra -->
+    <string name="status_cancelled">已取消</string>
+
+    <!-- Home extras -->
+    <string name="home_refresh_shizuku">刷新 Shizuku 状态</string>
+    <string name="home_stop_execution">停止执行</string>
+    <string name="home_result_cancelled">已取消</string>
+
+    <!-- History extras -->
+    <string name="history_steps_short">%1$d步</string>
+    <string name="history_no_steps">暂无执行步骤</string>
+    <string name="history_no_logs">暂无执行日志</string>
+    <string name="history_tab_timeline">执行时间线</string>
+    <string name="history_tab_logs">执行日志</string>
+    <string name="history_instruction_label">任务指令</string>
+    <string name="history_delete_confirm_btn">删除</string>
+    <string name="history_empty_emoji">📝</string>
+    <string name="step_label">Step %1$d</string>
+
+    <!-- Generated titles -->
+    <string name="title_open_app">打开应用</string>
+    <string name="title_order">点餐</string>
+    <string name="title_send_message">发送消息</string>
+    <string name="title_browse">浏览内容</string>
+    <string name="title_search">搜索</string>
+    <string name="title_settings">调整设置</string>
+    <string name="title_play_media">播放媒体</string>
+    <string name="title_task">任务</string>
+
+    <!-- Capabilities screen -->
+    <string name="capabilities_title">能力</string>
+    <string name="capabilities_subtitle">%1$d 个 Agent，%2$d 个工具</string>
+    <string name="capabilities_tab_agents">Agents (%1$d)</string>
+    <string name="capabilities_tab_tools">Tools (%1$d)</string>
+    <string name="capabilities_arch_title">🧠 多 Agent 协作架构</string>
+    <string name="capabilities_arch_desc">肉包采用多 Agent 协作架构，每个 Agent 专注于特定职责，通过协作完成复杂的手机自动化任务。</string>
+    <string name="capabilities_responsibilities">职责</string>
+    <string name="capabilities_expand">展开</string>
+    <string name="capabilities_collapse">收起</string>
+    <string name="capabilities_no_tools">暂无工具</string>
+    <string name="capabilities_empty_emoji">📦</string>
+
+    <!-- Settings screen extras -->
+    <string name="settings_section_exec">执行设置</string>
+    <string name="settings_section_shizuku_advanced">Shizuku 高级选项</string>
+    <string name="settings_section_feedback">反馈与调试</string>
+    <string name="settings_max_steps">最大执行步数</string>
+    <string name="settings_max_steps_value">%1$d 步</string>
+    <string name="settings_max_steps_desc">设置 Agent 单次任务的最大执行步数。步数越多，能完成的任务越复杂，但消耗的 token 也越多。</string>
+    <string name="settings_shizuku_privilege_title">当前权限级别</string>
+    <string name="settings_shizuku_privilege_root">Root 模式 (UID 0)</string>
+    <string name="settings_shizuku_privilege_adb">ADB 模式 (UID 2000)</string>
+    <string name="settings_shizuku_privilege_none">未连接</string>
+    <string name="settings_root_mode">Root 模式</string>
+    <string name="settings_root_mode_need">需要 Shizuku 以 Root 权限运行</string>
+    <string name="settings_root_mode_on">已启用高级权限</string>
+    <string name="settings_root_mode_off">启用后可使用 Root 功能</string>
+    <string name="settings_su_command">允许 su -c 命令</string>
+    <string name="settings_su_command_on">AI 可执行 Root 命令</string>
+    <string name="settings_su_command_off">禁止执行 su -c</string>
+    <string name="settings_cloud_crash">云端崩溃上报</string>
+    <string name="settings_cloud_crash_on">已开启，帮助我们改进应用</string>
+    <string name="settings_cloud_crash_off">已关闭</string>
+    <string name="settings_export_logs">导出日志</string>
+    <string name="settings_clear_logs">清除日志</string>
+    <string name="settings_clear_logs_desc">删除所有本地日志文件</string>
+    <string name="settings_clear_logs_title">确认清除</string>
+    <string name="settings_clear_logs_confirm">确定要删除所有日志文件吗？</string>
+    <string name="settings_about_app_title">肉包 Autopilot</string>
+    <string name="settings_model_default_desc">阿里云通义千问视觉模型</string>
+    <string name="settings_model_recommended">推荐模型</string>
+    <string name="settings_model_custom">自定义模型</string>
+    <string name="settings_model_custom_hint">输入模型名称，如 gpt-4o</string>
+    <string name="settings_fetch_models">从 API 获取可用模型</string>
+    <string name="settings_fetching">获取中…</string>
+    <string name="settings_api_models_list">API 模型列表 (%1$d)</string>
+    <string name="settings_search_models">搜索模型…</string>
+    <string name="settings_no_models_set_key">请先设置 API Key</string>
+    <string name="settings_no_models_fetch">点击「从 API 获取」加载模型列表</string>
+    <string name="settings_no_match">没有匹配「%1$s」的模型</string>
+    <string name="settings_models_found">找到 %1$d 个模型</string>
+    <string name="settings_provider_title">API 服务商</string>
+    <string name="settings_provider_desc">选择 API 服务商（支持 OpenAI 兼容接口）</string>
+    <string name="settings_custom_url_hint_mai">http://your-server:8000/v1</string>
+    <string name="settings_custom_url_hint">https://api.example.com/v1</string>
+    <string name="settings_custom_url_desc_mai">留空使用默认地址 (localhost:8000)</string>
+    <string name="settings_custom_url_desc">输入自定义 API 端点地址</string>
+    <string name="settings_done">完成</string>
+    <string name="settings_root_warning_title">启用 Root 模式</string>
+    <string name="settings_root_warning_msg">Root 模式将允许应用使用更高级的系统权限。</string>
+    <string name="settings_warning_label">警告：</string>
+    <string name="settings_root_warning_bullet1">Root 权限可能导致系统不稳定</string>
+    <string name="settings_root_warning_bullet2">不当操作可能损坏设备数据</string>
+    <string name="settings_root_warning_bullet3">请确保您了解 Root 权限的风险</string>
+    <string name="settings_root_warning_end">仅在您完全了解风险并需要高级功能时才启用此选项。</string>
+    <string name="settings_understand_enable">我了解风险，启用</string>
+    <string name="settings_su_warning_title">允许 su -c 命令</string>
+    <string name="settings_su_warning_msg">此选项将允许 AI 执行 su -c 命令，这意味着 AI 可以以 Root 权限执行任意 Shell 命令。</string>
+    <string name="settings_extreme_warning">极度危险：</string>
+    <string name="settings_su_warning_bullet1">AI 可能执行危险的系统命令</string>
+    <string name="settings_su_warning_bullet2">可能导致数据丢失或系统损坏</string>
+    <string name="settings_su_warning_bullet3">可能被恶意指令利用</string>
+    <string name="settings_su_warning_bullet4">不建议在日常使用中启用</string>
+    <string name="settings_su_warning_end">强烈建议：仅在完全可控的测试环境中使用，并在使用完毕后立即关闭。</string>
+    <string name="shizuku_download_btn">前往下载 Shizuku</string>
+
+    <!-- Capabilities - Agents -->
+    <string name="agent_manager_role">规划者</string>
+    <string name="agent_manager_desc">负责理解用户意图，制定高层次的执行计划，并跟踪任务进度。</string>
+    <string name="agent_manager_r1">分析用户请求，理解真实意图</string>
+    <string name="agent_manager_r2">将复杂任务分解为可执行的子目标</string>
+    <string name="agent_manager_r3">制定执行计划和步骤顺序</string>
+    <string name="agent_manager_r4">根据执行反馈动态调整计划</string>
+    <string name="agent_executor_role">执行者</string>
+    <string name="agent_executor_desc">负责分析当前屏幕状态，决定具体的操作动作。</string>
+    <string name="agent_executor_r1">分析屏幕截图，理解界面元素</string>
+    <string name="agent_executor_r2">根据计划选择下一步操作</string>
+    <string name="agent_executor_r3">确定点击、滑动、输入等具体动作</string>
+    <string name="agent_executor_r4">输出精确的操作坐标和参数</string>
+    <string name="agent_reflector_role">反思者</string>
+    <string name="agent_reflector_desc">负责评估操作结果，判断动作是否成功执行。</string>
+    <string name="agent_reflector_r1">对比操作前后的屏幕变化</string>
+    <string name="agent_reflector_r2">判断操作是否达到预期效果</string>
+    <string name="agent_reflector_r3">识别异常情况（如弹窗、错误）</string>
+    <string name="agent_reflector_r4">提供反馈帮助调整后续策略</string>
+    <string name="agent_notetaker_role">记录者</string>
+    <string name="agent_notetaker_desc">负责记录执行过程中的关键信息，供其他 Agent 参考。</string>
+    <string name="agent_notetaker_r1">记录任务执行的重要节点</string>
+    <string name="agent_notetaker_r2">保存中间结果和状态信息</string>
+    <string name="agent_notetaker_r3">为后续步骤提供上下文参考</string>
+    <string name="agent_notetaker_r4">生成执行摘要和日志</string>
+
+    <!-- Capabilities - Built-in tools -->
+    <string name="tool_screenshot_desc">截取当前屏幕，获取界面图像供 AI 分析</string>
+    <string name="tool_tap_desc">点击屏幕指定坐标位置</string>
+    <string name="tool_swipe_desc">在屏幕上滑动，支持上下左右方向</string>
+    <string name="tool_type_desc">输入文本内容到当前焦点位置</string>
+    <string name="tool_press_key_desc">按下系统按键（Home、Back、Enter 等）</string>
 </resources>

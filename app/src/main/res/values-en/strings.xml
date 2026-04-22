@@ -145,6 +145,19 @@
     <string name="btn_back">Back</string>
     <string name="btn_got_it">Got it</string>
 
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">Baozi Status</string>
+    <string name="overlay_channel_desc">Shows Baozi execution status</string>
+    <string name="overlay_notification_title">Baozi Running</string>
+    <string name="overlay_notification_text">Executing automation task…</string>
+    <string name="overlay_default_text">Baozi</string>
+    <string name="overlay_btn_stop">⏹ Stop</string>
+    <string name="overlay_btn_continue">✅ Continue</string>
+    <string name="overlay_btn_confirm">✅ Confirm</string>
+    <string name="overlay_btn_cancel">❌ Cancel</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
     <!-- Toast Messages -->
     <string name="toast_enter_instruction">Please enter an instruction</string>
     <string name="toast_enter_api_key">Please enter API Key</string>
@@ -157,4 +170,150 @@
     <string name="toast_sensitive_page">Detected sensitive page (payment/password), safely stopped</string>
     <string name="toast_max_steps">Reached maximum steps limit</string>
     <string name="toast_error">Error: %1$s</string>
+    <string name="toast_checking_shizuku">Checking Shizuku status…</string>
+    <string name="toast_authorize_shizuku_popup">Please authorize Shizuku in the popup</string>
+    <string name="toast_task_stopped">Task stopped</string>
+    <string name="toast_api_key_required">Please set API Key first</string>
+    <string name="toast_models_loaded">Loaded %1$d models</string>
+    <string name="toast_fetch_failed">Fetch failed: %1$s</string>
+    <string name="toast_logs_cleared">Logs cleared</string>
+
+    <!-- Status extra -->
+    <string name="status_cancelled">Cancelled</string>
+
+    <!-- Home extras -->
+    <string name="home_refresh_shizuku">Refresh Shizuku status</string>
+    <string name="home_stop_execution">Stop execution</string>
+    <string name="home_result_cancelled">Cancelled</string>
+
+    <!-- History extras -->
+    <string name="history_steps_short">%1$d steps</string>
+    <string name="history_no_steps">No execution steps</string>
+    <string name="history_no_logs">No execution logs</string>
+    <string name="history_tab_timeline">Execution Timeline</string>
+    <string name="history_tab_logs">Execution Logs</string>
+    <string name="history_instruction_label">Task Instruction</string>
+    <string name="history_delete_confirm_btn">Delete</string>
+    <string name="history_empty_emoji">📝</string>
+    <string name="step_label">Step %1$d</string>
+
+    <!-- Generated titles -->
+    <string name="title_open_app">Open App</string>
+    <string name="title_order">Order</string>
+    <string name="title_send_message">Send Message</string>
+    <string name="title_browse">Browse</string>
+    <string name="title_search">Search</string>
+    <string name="title_settings">Adjust Settings</string>
+    <string name="title_play_media">Play Media</string>
+    <string name="title_task">Task</string>
+
+    <!-- Capabilities screen -->
+    <string name="capabilities_title">Capabilities</string>
+    <string name="capabilities_subtitle">%1$d Agents, %2$d Tools</string>
+    <string name="capabilities_tab_agents">Agents (%1$d)</string>
+    <string name="capabilities_tab_tools">Tools (%1$d)</string>
+    <string name="capabilities_arch_title">🧠 Multi-Agent Collaboration</string>
+    <string name="capabilities_arch_desc">Baozi uses a multi-agent collaboration architecture, where each agent focuses on specific responsibilities to complete complex phone automation tasks together.</string>
+    <string name="capabilities_responsibilities">Responsibilities</string>
+    <string name="capabilities_expand">Expand</string>
+    <string name="capabilities_collapse">Collapse</string>
+    <string name="capabilities_no_tools">No tools available</string>
+    <string name="capabilities_empty_emoji">📦</string>
+
+    <!-- Settings screen extras -->
+    <string name="settings_section_exec">Execution</string>
+    <string name="settings_section_shizuku_advanced">Shizuku Advanced</string>
+    <string name="settings_section_feedback">Feedback &amp; Debug</string>
+    <string name="settings_max_steps">Max Execution Steps</string>
+    <string name="settings_max_steps_value">%1$d steps</string>
+    <string name="settings_max_steps_desc">Set the maximum number of steps per task. More steps allow more complex tasks but use more tokens.</string>
+    <string name="settings_shizuku_privilege_title">Current privilege level</string>
+    <string name="settings_shizuku_privilege_root">Root mode (UID 0)</string>
+    <string name="settings_shizuku_privilege_adb">ADB mode (UID 2000)</string>
+    <string name="settings_shizuku_privilege_none">Not connected</string>
+    <string name="settings_root_mode">Root Mode</string>
+    <string name="settings_root_mode_need">Requires Shizuku running as root</string>
+    <string name="settings_root_mode_on">Advanced privileges enabled</string>
+    <string name="settings_root_mode_off">Enable to use root features</string>
+    <string name="settings_su_command">Allow su -c commands</string>
+    <string name="settings_su_command_on">AI can execute root commands</string>
+    <string name="settings_su_command_off">su -c disabled</string>
+    <string name="settings_cloud_crash">Cloud crash reports</string>
+    <string name="settings_cloud_crash_on">Enabled — helps improve the app</string>
+    <string name="settings_cloud_crash_off">Disabled</string>
+    <string name="settings_export_logs">Export logs</string>
+    <string name="settings_clear_logs">Clear logs</string>
+    <string name="settings_clear_logs_desc">Delete all local log files</string>
+    <string name="settings_clear_logs_title">Confirm clear</string>
+    <string name="settings_clear_logs_confirm">Delete all log files?</string>
+    <string name="settings_about_app_title">Baozi Autopilot</string>
+    <string name="settings_model_default_desc">Aliyun Qwen Vision model</string>
+    <string name="settings_model_recommended">Recommended</string>
+    <string name="settings_model_custom">Custom Model</string>
+    <string name="settings_model_custom_hint">Enter model name, e.g. gpt-4o</string>
+    <string name="settings_fetch_models">Fetch available models from API</string>
+    <string name="settings_fetching">Fetching…</string>
+    <string name="settings_api_models_list">API models (%1$d)</string>
+    <string name="settings_search_models">Search models…</string>
+    <string name="settings_no_models_set_key">Please set API Key first</string>
+    <string name="settings_no_models_fetch">Tap \"Fetch from API\" to load models</string>
+    <string name="settings_no_match">No models match \"%1$s\"</string>
+    <string name="settings_models_found">Found %1$d models</string>
+    <string name="settings_provider_title">API Provider</string>
+    <string name="settings_provider_desc">Choose an API provider (OpenAI-compatible)</string>
+    <string name="settings_custom_url_hint_mai">http://your-server:8000/v1</string>
+    <string name="settings_custom_url_hint">https://api.example.com/v1</string>
+    <string name="settings_custom_url_desc_mai">Leave empty to use default (localhost:8000)</string>
+    <string name="settings_custom_url_desc">Enter custom API endpoint URL</string>
+    <string name="settings_done">Done</string>
+    <string name="settings_root_warning_title">Enable Root Mode</string>
+    <string name="settings_root_warning_msg">Root mode allows the app to use higher-level system privileges.</string>
+    <string name="settings_warning_label">Warning:</string>
+    <string name="settings_root_warning_bullet1">Root access may cause system instability</string>
+    <string name="settings_root_warning_bullet2">Improper actions can corrupt device data</string>
+    <string name="settings_root_warning_bullet3">Make sure you understand the risks</string>
+    <string name="settings_root_warning_end">Only enable this option if you fully understand the risks and need advanced features.</string>
+    <string name="settings_understand_enable">I understand, enable</string>
+    <string name="settings_su_warning_title">Allow su -c commands</string>
+    <string name="settings_su_warning_msg">This lets the AI run su -c commands, meaning it can execute any shell command with root privileges.</string>
+    <string name="settings_extreme_warning">Extremely dangerous:</string>
+    <string name="settings_su_warning_bullet1">AI may run dangerous system commands</string>
+    <string name="settings_su_warning_bullet2">Data loss or system damage is possible</string>
+    <string name="settings_su_warning_bullet3">Could be exploited by malicious instructions</string>
+    <string name="settings_su_warning_bullet4">Not recommended for everyday use</string>
+    <string name="settings_su_warning_end">Strongly recommended: use only in a fully controlled test environment and disable immediately after.</string>
+    <string name="shizuku_download_btn">Download Shizuku</string>
+
+    <!-- Capabilities - Agents -->
+    <string name="agent_manager_role">Planner</string>
+    <string name="agent_manager_desc">Understands user intent, builds a high-level execution plan, and tracks task progress.</string>
+    <string name="agent_manager_r1">Analyze the user request and understand real intent</string>
+    <string name="agent_manager_r2">Break a complex task into executable sub-goals</string>
+    <string name="agent_manager_r3">Plan the execution order and steps</string>
+    <string name="agent_manager_r4">Adjust the plan dynamically based on feedback</string>
+    <string name="agent_executor_role">Executor</string>
+    <string name="agent_executor_desc">Analyzes the current screen state and decides concrete UI actions.</string>
+    <string name="agent_executor_r1">Analyze screenshots and understand UI elements</string>
+    <string name="agent_executor_r2">Pick the next step based on the plan</string>
+    <string name="agent_executor_r3">Decide taps, swipes, text input and other actions</string>
+    <string name="agent_executor_r4">Produce precise action coordinates and parameters</string>
+    <string name="agent_reflector_role">Reflector</string>
+    <string name="agent_reflector_desc">Evaluates the result of each action and whether it succeeded.</string>
+    <string name="agent_reflector_r1">Compare screens before and after the action</string>
+    <string name="agent_reflector_r2">Decide whether the expected effect was achieved</string>
+    <string name="agent_reflector_r3">Spot anomalies (dialogs, errors)</string>
+    <string name="agent_reflector_r4">Provide feedback to adjust the next strategy</string>
+    <string name="agent_notetaker_role">Notetaker</string>
+    <string name="agent_notetaker_desc">Records key information during execution so other agents can reuse it.</string>
+    <string name="agent_notetaker_r1">Record important checkpoints during execution</string>
+    <string name="agent_notetaker_r2">Persist intermediate results and state</string>
+    <string name="agent_notetaker_r3">Provide context for later steps</string>
+    <string name="agent_notetaker_r4">Produce execution summaries and logs</string>
+
+    <!-- Capabilities - Built-in tools -->
+    <string name="tool_screenshot_desc">Capture the current screen image for the AI to analyze</string>
+    <string name="tool_tap_desc">Tap the screen at given coordinates</string>
+    <string name="tool_swipe_desc">Swipe on the screen in any direction</string>
+    <string name="tool_type_desc">Type text into the focused input</string>
+    <string name="tool_press_key_desc">Press a system key (Home, Back, Enter, …)</string>
 </resources>

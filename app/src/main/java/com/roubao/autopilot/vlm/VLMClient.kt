@@ -167,21 +167,22 @@ class VLMClient(
                     .post(requestBody.toString().toRequestBody("application/json".toMediaType()))
                     .build()
 
-                val response = client.newCall(request).execute()
-                val responseBody = response.body?.string() ?: ""
+                client.newCall(request).execute().use { response ->
+                    val responseBody = response.body?.string() ?: ""
 
-                if (response.isSuccessful) {
-                    val json = JSONObject(responseBody)
-                    val choices = json.getJSONArray("choices")
-                    if (choices.length() > 0) {
-                        val message = choices.getJSONObject(0).getJSONObject("message")
-                        val responseContent = message.getString("content")
-                        return@withContext Result.success(responseContent)
+                    if (response.isSuccessful) {
+                        val json = JSONObject(responseBody)
+                        val choices = json.getJSONArray("choices")
+                        if (choices.length() > 0) {
+                            val message = choices.getJSONObject(0).getJSONObject("message")
+                            val responseContent = message.getString("content")
+                            return@withContext Result.success(responseContent)
+                        } else {
+                            lastException = Exception("No response from model")
+                        }
                     } else {
-                        lastException = Exception("No response from model")
+                        lastException = Exception("API error: ${response.code} - $responseBody")
                     }
-                } else {
-                    lastException = Exception("API error: ${response.code} - $responseBody")
                 }
             } catch (e: UnknownHostException) {
                 // DNS 解析失败，重试
@@ -242,21 +243,22 @@ class VLMClient(
                     .post(requestBody.toString().toRequestBody("application/json".toMediaType()))
                     .build()
 
-                val response = client.newCall(request).execute()
-                val responseBody = response.body?.string() ?: ""
+                client.newCall(request).execute().use { response ->
+                    val responseBody = response.body?.string() ?: ""
 
-                if (response.isSuccessful) {
-                    val json = JSONObject(responseBody)
-                    val choices = json.getJSONArray("choices")
-                    if (choices.length() > 0) {
-                        val message = choices.getJSONObject(0).getJSONObject("message")
-                        val responseContent = message.getString("content")
-                        return@withContext Result.success(responseContent)
+                    if (response.isSuccessful) {
+                        val json = JSONObject(responseBody)
+                        val choices = json.getJSONArray("choices")
+                        if (choices.length() > 0) {
+                            val message = choices.getJSONObject(0).getJSONObject("message")
+                            val responseContent = message.getString("content")
+                            return@withContext Result.success(responseContent)
+                        } else {
+                            lastException = Exception("No response from model")
+                        }
                     } else {
-                        lastException = Exception("No response from model")
+                        lastException = Exception("API error: ${response.code} - $responseBody")
                     }
-                } else {
-                    lastException = Exception("API error: ${response.code} - $responseBody")
                 }
             } catch (e: UnknownHostException) {
                 println("[VLMClient] DNS 解析失败，重试 $attempt/$MAX_RETRIES...")

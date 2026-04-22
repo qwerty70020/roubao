@@ -132,37 +132,38 @@ For each function call, return the thinking process in <thinking> </thinking> ta
                     .post(requestBody.toString().toRequestBody("application/json".toMediaType()))
                     .build()
 
-                val response = client.newCall(request).execute()
-                val responseBody = response.body?.string() ?: ""
+                client.newCall(request).execute().use { response ->
+                    val responseBody = response.body?.string() ?: ""
 
-                if (response.isSuccessful) {
-                    val json = JSONObject(responseBody)
-                    val choices = json.getJSONArray("choices")
-                    if (choices.length() > 0) {
-                        val message = choices.getJSONObject(0).getJSONObject("message")
-                        val content = message.getString("content")
+                    if (response.isSuccessful) {
+                        val json = JSONObject(responseBody)
+                        val choices = json.getJSONArray("choices")
+                        if (choices.length() > 0) {
+                            val message = choices.getJSONObject(0).getJSONObject("message")
+                            val content = message.getString("content")
 
-                        println("[MAIUIClient] Raw response: $content")
+                            println("[MAIUIClient] Raw response: $content")
 
-                        // 解析响应
-                        val parsed = parseResponse(content)
+                            // 解析响应
+                            val parsed = parseResponse(content)
 
-                        // 保存到历史
-                        historyImages.add(currentImageBase64)
-                        historyResponses.add(content)
+                            // 保存到历史
+                            historyImages.add(currentImageBase64)
+                            historyResponses.add(content)
 
-                        // 限制历史数量
-                        while (historyImages.size > historyN) {
-                            historyImages.removeAt(0)
-                            historyResponses.removeAt(0)
+                            // 限制历史数量
+                            while (historyImages.size > historyN) {
+                                historyImages.removeAt(0)
+                                historyResponses.removeAt(0)
+                            }
+
+                            return@withContext Result.success(parsed)
+                        } else {
+                            lastException = Exception("No response from model")
                         }
-
-                        return@withContext Result.success(parsed)
                     } else {
-                        lastException = Exception("No response from model")
+                        lastException = Exception("API error: ${response.code} - $responseBody")
                     }
-                } else {
-                    lastException = Exception("API error: ${response.code} - $responseBody")
                 }
             } catch (e: Exception) {
                 println("[MAIUIClient] Error on attempt $attempt: ${e.message}")
