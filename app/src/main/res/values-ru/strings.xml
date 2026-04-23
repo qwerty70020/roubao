@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Баоцзы</string>
+
+    <!-- Tab Titles -->
+    <string name="tab_home">Баоцзы</string>
+    <string name="tab_history">История</string>
+    <string name="tab_settings">Настройки</string>
+
+    <!-- Home Screen -->
+    <string name="home_ready">Готов, скажите, что нужно сделать</string>
+    <string name="home_connect_shizuku">Сначала подключите Shizuku</string>
+    <string name="home_try_these">Попробуйте эти команды</string>
+    <string name="home_input_placeholder">Скажите Баоцзы, что вы хотите сделать…</string>
+    <string name="home_executing">Выполняется шаг %1$d</string>
+    <string name="home_send">Отправить</string>
+    <string name="home_stop">Стоп</string>
+
+    <!-- Preset Commands -->
+    <string name="preset_burger">Заказать бургер</string>
+    <string name="preset_burger_cmd">Закажи мне вкусный бургер поблизости</string>
+    <string name="preset_weibo">Опубликовать в Weibo</string>
+    <string name="preset_weibo_cmd">Опубликуй моё последнее фото в Weibo</string>
+    <string name="preset_bilibili">Смотреть Bilibili</string>
+    <string name="preset_bilibili_cmd">Я хочу посмотреть популярные видео на Bilibili</string>
+    <string name="preset_takeout">Заказать еду</string>
+    <string name="preset_takeout_cmd">Закажи мне рис со свининой через Meituan</string>
+    <string name="preset_music">Слушать музыку</string>
+    <string name="preset_music_cmd">Открой NetEase Cloud Music и запусти ежедневные рекомендации</string>
+    <string name="preset_message">Отправить сообщение</string>
+    <string name="preset_message_cmd">Напиши последнему контакту, что я занят</string>
+
+    <!-- History Screen -->
+    <string name="history_title">История выполнения</string>
+    <string name="history_count">Записей: %1$d</string>
+    <string name="history_empty">Нет записей выполнения</string>
+    <string name="history_empty_hint">Записи появятся здесь после выполнения задач</string>
+    <string name="history_steps">%1$d шаг(ов)</string>
+    <string name="history_delete">Удалить</string>
+    <string name="history_delete_title">Удалить запись</string>
+    <string name="history_delete_confirm">Вы уверены, что хотите удалить эту запись?</string>
+    <string name="history_timeline">Хронология выполнения</string>
+    <string name="history_instruction">Инструкция задачи</string>
+
+    <!-- Status -->
+    <string name="status_completed">Завершено</string>
+    <string name="status_failed">Ошибка</string>
+    <string name="status_stopped">Остановлено</string>
+    <string name="status_running">Выполняется</string>
+    <string name="status_label">Статус</string>
+    <string name="steps_label">Шаги</string>
+    <string name="duration_label">Длительность</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_subtitle">Настройте API и параметры приложения</string>
+
+    <!-- Settings - Appearance -->
+    <string name="settings_appearance">Внешний вид</string>
+    <string name="settings_theme">Режим темы</string>
+    <string name="theme_light">Светлая тема</string>
+    <string name="theme_dark">Тёмная тема</string>
+    <string name="theme_system">Как в системе</string>
+    <string name="theme_select">Выберите тему</string>
+
+    <!-- Settings - API -->
+    <string name="settings_api">Настройки API</string>
+    <string name="settings_provider">Провайдер API</string>
+    <string name="settings_provider_custom">Свой</string>
+    <string name="settings_model">Модель</string>
+    <string name="settings_api_key">Ключ API</string>
+    <string name="settings_api_key_set">Задан (%1$s)</string>
+    <string name="settings_api_key_unset">Не задан</string>
+    <string name="settings_api_key_hint">Введите ваш ключ API</string>
+    <string name="settings_show">Показать</string>
+    <string name="settings_hide">Скрыть</string>
+
+    <!-- Settings - Custom Models -->
+    <string name="settings_custom_models">Свои модели</string>
+    <string name="settings_add_model">Добавить свою модель</string>
+    <string name="settings_add_model_hint">Добавьте другие поддерживаемые модели</string>
+    <string name="settings_model_name_hint">Введите название или ID модели</string>
+    <string name="settings_model_name_example">напр., gpt-4-vision</string>
+    <string name="settings_select_model">Выберите модель</string>
+
+    <!-- Settings - Help -->
+    <string name="settings_help">Справка</string>
+    <string name="settings_shizuku_guide">Руководство Shizuku</string>
+    <string name="settings_shizuku_guide_desc">Узнайте, как установить и настроить Shizuku</string>
+    <string name="settings_overlay_help">Разрешение на наложение</string>
+    <string name="settings_overlay_help_desc">Почему нужно разрешение на наложение</string>
+
+    <!-- Settings - About -->
+    <string name="settings_about">О приложении</string>
+    <string name="settings_version">Версия</string>
+    <string name="settings_app_desc">Инструмент автоматизации Android на основе VLM</string>
+
+    <!-- Shizuku Status -->
+    <string name="shizuku_connected">Shizuku подключён</string>
+    <string name="shizuku_not_connected">Shizuku не подключён</string>
+    <string name="shizuku_available">Управление устройством доступно</string>
+    <string name="shizuku_unavailable">Запустите Shizuku и предоставьте доступ</string>
+
+    <!-- Shizuku Help -->
+    <string name="shizuku_help_step1_title">Скачайте Shizuku</string>
+    <string name="shizuku_help_step1_desc">Скачайте Shizuku из Google Play или GitHub\n\n• Google Play: ищите \"Shizuku\"\n• GitHub: github.com/RikkaApps/Shizuku</string>
+    <string name="shizuku_help_step2_title">Запустите Shizuku</string>
+    <string name="shizuku_help_step2_desc">Откройте Shizuku и выберите способ запуска:\n\n• Беспроводная отладка (рекомендуется): нужен Android 11+, включите беспроводную отладку в параметрах разработчика\n• Подключение к компьютеру: запуск через команду ADB</string>
+    <string name="shizuku_help_step3_title">Авторизуйте Баоцзы</string>
+    <string name="shizuku_help_step3_desc">Найдите Baozi Autopilot в разделе «Управление приложениями» Shizuku и нажмите «Авторизовать»</string>
+    <string name="shizuku_help_step4_title">Начните пользоваться</string>
+    <string name="shizuku_help_step4_desc">После авторизации вернитесь в Баоцзы. Карточка статуса покажет «Shizuku подключён»</string>
+
+    <!-- Overlay Help -->
+    <string name="overlay_why">Зачем нужно разрешение на наложение?</string>
+    <string name="overlay_reason">Баоцзы нужно разрешение на наложение во время выполнения задачи, чтобы:</string>
+    <string name="overlay_feature1">Показывать текущий прогресс выполнения</string>
+    <string name="overlay_feature2">Предоставлять кнопку остановки, чтобы прервать задачу в любой момент</string>
+    <string name="overlay_feature3">Показывать информацию о состоянии поверх других приложений</string>
+    <string name="overlay_how">Как включить?</string>
+    <string name="overlay_how_desc">1. При выполнении задачи появится подсказка\n2. Или перейдите: Настройки &gt; Приложения &gt; Баоцзы &gt; Поверх других окон\n3. Включите «Поверх других приложений»</string>
+    <string name="overlay_privacy">Конфиденциальность и безопасность</string>
+    <string name="overlay_privacy_desc">Наложение показывается только во время выполнения задачи и не собирает никакой персональной информации. После завершения задачи оно автоматически исчезает.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome">Добро пожаловать в Баоцзы</string>
+    <string name="onboarding_welcome_desc">Баоцзы — умный ассистент автоматизации,\nкоторый помогает управлять телефоном для выполнения разных задач</string>
+    <string name="onboarding_ai">На базе ИИ</string>
+    <string name="onboarding_ai_desc">На основе передовых визуально-языковых моделей\nБаоцзы понимает содержимое экрана и принимает разумные решения</string>
+    <string name="onboarding_easy">Просто в использовании</string>
+    <string name="onboarding_easy_desc">Опишите естественным языком, что нужно сделать,\nи Баоцзы выполнит это за вас</string>
+    <string name="onboarding_safe">Безопасно и надёжно</string>
+    <string name="onboarding_safe_desc">Автоматически останавливается на чувствительных страницах\n(например, оплата, пароли), чтобы защитить ваш аккаунт</string>
+    <string name="onboarding_skip">Пропустить</string>
+    <string name="onboarding_next">Далее</string>
+    <string name="onboarding_start">Начать</string>
+
+    <!-- Common -->
+    <string name="btn_confirm">Подтвердить</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_close">Закрыть</string>
+    <string name="btn_add">Добавить</string>
+    <string name="btn_delete">Удалить</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_got_it">Понятно</string>
+
+    <!-- Overlay Service -->
+    <string name="overlay_channel_name">Статус Баоцзы</string>
+    <string name="overlay_channel_desc">Показывает состояние выполнения Баоцзы</string>
+    <string name="overlay_notification_title">Баоцзы запущен</string>
+    <string name="overlay_notification_text">Выполняется автоматизация…</string>
+    <string name="overlay_default_text">Баоцзы</string>
+    <string name="overlay_btn_stop">⏹ Стоп</string>
+    <string name="overlay_btn_continue">✅ Продолжить</string>
+    <string name="overlay_btn_confirm">✅ Подтвердить</string>
+    <string name="overlay_btn_cancel">❌ Отмена</string>
+    <string name="overlay_takeover_prefix">🖐 %1$s</string>
+    <string name="overlay_confirm_prefix">⚠️ %1$s</string>
+
+    <!-- Toast Messages -->
+    <string name="toast_enter_instruction">Введите инструкцию</string>
+    <string name="toast_enter_api_key">Введите ключ API</string>
+    <string name="toast_grant_overlay">Предоставьте разрешение на наложение</string>
+    <string name="toast_shizuku_granted">Разрешение Shizuku получено</string>
+    <string name="toast_start_shizuku">Сначала запустите приложение Shizuku</string>
+    <string name="toast_shizuku_old">Версия Shizuku устарела</string>
+    <string name="toast_task_complete">Задача выполнена</string>
+    <string name="toast_user_stopped">Остановлено пользователем</string>
+    <string name="toast_sensitive_page">Обнаружена чувствительная страница (оплата/пароль), безопасно остановлено</string>
+    <string name="toast_max_steps">Достигнут лимит шагов</string>
+    <string name="toast_error">Ошибка: %1$s</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="toast_checking_shizuku">Проверяем статус Shizuku…</string>
+    <string name="toast_authorize_shizuku_popup">Подтвердите доступ Shizuku в диалоге</string>
+    <string name="toast_task_stopped">Задача остановлена</string>
+    <string name="toast_api_key_required">Сначала задайте ключ API</string>
+    <string name="toast_models_loaded">Загружено моделей: %1$d</string>
+    <string name="toast_fetch_failed">Ошибка загрузки: %1$s</string>
+    <string name="toast_logs_cleared">Журналы очищены</string>
+
+    <!-- Status extra -->
+    <string name="status_cancelled">Отменено</string>
+
+    <!-- Home extras -->
+    <string name="home_refresh_shizuku">Обновить статус Shizuku</string>
+    <string name="home_stop_execution">Остановить выполнение</string>
+    <string name="home_result_cancelled">Отменено</string>
+
+    <!-- History extras -->
+    <string name="history_steps_short">%1$d ш.</string>
+    <string name="history_no_steps">Нет шагов выполнения</string>
+    <string name="history_no_logs">Нет записей журнала</string>
+    <string name="history_tab_timeline">Хронология</string>
+    <string name="history_tab_logs">Журнал</string>
+    <string name="history_instruction_label">Инструкция задачи</string>
+    <string name="history_delete_confirm_btn">Удалить</string>
+    <string name="history_empty_emoji">📝</string>
+    <string name="step_label">Шаг %1$d</string>
+
+    <!-- Generated titles -->
+    <string name="title_open_app">Открыть приложение</string>
+    <string name="title_order">Заказ</string>
+    <string name="title_send_message">Отправить сообщение</string>
+    <string name="title_browse">Просмотр контента</string>
+    <string name="title_search">Поиск</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_play_media">Воспроизвести медиа</string>
+    <string name="title_task">Задача</string>
+
+    <!-- Capabilities screen -->
+    <string name="capabilities_title">Возможности</string>
+    <string name="capabilities_subtitle">%1$d агентов, %2$d инструментов</string>
+    <string name="capabilities_tab_agents">Агенты (%1$d)</string>
+    <string name="capabilities_tab_tools">Инструменты (%1$d)</string>
+    <string name="capabilities_arch_title">🧠 Мультиагентная архитектура</string>
+    <string name="capabilities_arch_desc">Баоцзы использует архитектуру совместной работы нескольких агентов. Каждый агент отвечает за свою область, и вместе они выполняют сложные задачи автоматизации телефона.</string>
+    <string name="capabilities_responsibilities">Обязанности</string>
+    <string name="capabilities_expand">Развернуть</string>
+    <string name="capabilities_collapse">Свернуть</string>
+    <string name="capabilities_no_tools">Инструментов нет</string>
+    <string name="capabilities_empty_emoji">📦</string>
+
+    <!-- Settings screen extras -->
+    <string name="settings_section_exec">Выполнение</string>
+    <string name="settings_section_shizuku_advanced">Shizuku дополнительно</string>
+    <string name="settings_section_feedback">Обратная связь и диагностика</string>
+    <string name="settings_max_steps">Макс. количество шагов</string>
+    <string name="settings_max_steps_value">%1$d шаг(ов)</string>
+    <string name="settings_max_steps_desc">Задайте максимальное количество шагов для одной задачи. Больше шагов — сложнее задачи, но больше расход токенов.</string>
+    <string name="settings_shizuku_privilege_title">Текущий уровень доступа</string>
+    <string name="settings_shizuku_privilege_root">Режим Root (UID 0)</string>
+    <string name="settings_shizuku_privilege_adb">Режим ADB (UID 2000)</string>
+    <string name="settings_shizuku_privilege_none">Не подключён</string>
+    <string name="settings_root_mode">Режим Root</string>
+    <string name="settings_root_mode_need">Нужно, чтобы Shizuku работал с правами Root</string>
+    <string name="settings_root_mode_on">Расширенные права включены</string>
+    <string name="settings_root_mode_off">Включите, чтобы использовать Root</string>
+    <string name="settings_su_command">Разрешить команды su -c</string>
+    <string name="settings_su_command_on">ИИ может выполнять Root-команды</string>
+    <string name="settings_su_command_off">su -c запрещено</string>
+    <string name="settings_cloud_crash">Облачные отчёты о сбоях</string>
+    <string name="settings_cloud_crash_on">Включено — помогает улучшать приложение</string>
+    <string name="settings_cloud_crash_off">Выключено</string>
+    <string name="settings_export_logs">Экспорт журналов</string>
+    <string name="settings_clear_logs">Очистить журналы</string>
+    <string name="settings_clear_logs_desc">Удалить все локальные файлы журналов</string>
+    <string name="settings_clear_logs_title">Подтвердить очистку</string>
+    <string name="settings_clear_logs_confirm">Удалить все файлы журналов?</string>
+    <string name="settings_about_app_title">Баоцзы Autopilot</string>
+    <string name="settings_model_default_desc">Визуальная модель Aliyun Qwen</string>
+    <string name="settings_model_recommended">Рекомендуемые</string>
+    <string name="settings_model_custom">Своя модель</string>
+    <string name="settings_model_custom_hint">Введите название модели, например gpt-4o</string>
+    <string name="settings_fetch_models">Получить модели из API</string>
+    <string name="settings_fetching">Загрузка…</string>
+    <string name="settings_api_models_list">Модели API (%1$d)</string>
+    <string name="settings_search_models">Поиск моделей…</string>
+    <string name="settings_no_models_set_key">Сначала задайте ключ API</string>
+    <string name="settings_no_models_fetch">Нажмите «Получить из API», чтобы загрузить список</string>
+    <string name="settings_no_match">Моделей по запросу «%1$s» не найдено</string>
+    <string name="settings_models_found">Найдено моделей: %1$d</string>
+    <string name="settings_provider_title">Провайдер API</string>
+    <string name="settings_provider_desc">Выберите провайдера API (совместимые с OpenAI)</string>
+    <string name="settings_custom_url_hint_mai">http://your-server:8000/v1</string>
+    <string name="settings_custom_url_hint">https://api.example.com/v1</string>
+    <string name="settings_custom_url_desc_mai">Оставьте пустым для localhost:8000</string>
+    <string name="settings_custom_url_desc">Введите свой адрес API</string>
+    <string name="settings_done">Готово</string>
+    <string name="settings_root_warning_title">Включить режим Root</string>
+    <string name="settings_root_warning_msg">Режим Root даёт приложению более высокие системные права.</string>
+    <string name="settings_warning_label">Внимание:</string>
+    <string name="settings_root_warning_bullet1">Root-доступ может привести к нестабильной работе</string>
+    <string name="settings_root_warning_bullet2">Неверные действия могут повредить данные устройства</string>
+    <string name="settings_root_warning_bullet3">Убедитесь, что понимаете риски</string>
+    <string name="settings_root_warning_end">Включайте эту опцию только если полностью осознаёте риски и нуждаетесь в расширенных функциях.</string>
+    <string name="settings_understand_enable">Я понимаю, включить</string>
+    <string name="settings_su_warning_title">Разрешить команды su -c</string>
+    <string name="settings_su_warning_msg">Эта опция позволяет ИИ выполнять команды su -c, то есть любые shell-команды с правами Root.</string>
+    <string name="settings_extreme_warning">Крайняя опасность:</string>
+    <string name="settings_su_warning_bullet1">ИИ может выполнить опасные системные команды</string>
+    <string name="settings_su_warning_bullet2">Возможна потеря данных или повреждение системы</string>
+    <string name="settings_su_warning_bullet3">Может быть использовано вредоносными инструкциями</string>
+    <string name="settings_su_warning_bullet4">Не рекомендуется для ежедневного использования</string>
+    <string name="settings_su_warning_end">Настоятельно рекомендуем: используйте только в полностью контролируемой среде и выключайте сразу после завершения.</string>
+    <string name="shizuku_download_btn">Скачать Shizuku</string>
+
+    <!-- Capabilities - Agents -->
+    <string name="agent_manager_role">Планировщик</string>
+    <string name="agent_manager_desc">Понимает намерение пользователя, строит высокоуровневый план выполнения и отслеживает прогресс задачи.</string>
+    <string name="agent_manager_r1">Анализирует запрос пользователя и распознаёт истинное намерение</string>
+    <string name="agent_manager_r2">Разбивает сложную задачу на подзадачи</string>
+    <string name="agent_manager_r3">Планирует последовательность шагов выполнения</string>
+    <string name="agent_manager_r4">Динамически корректирует план на основе обратной связи</string>
+    <string name="agent_executor_role">Исполнитель</string>
+    <string name="agent_executor_desc">Анализирует текущее состояние экрана и выбирает конкретные действия в интерфейсе.</string>
+    <string name="agent_executor_r1">Анализирует скриншоты и распознаёт элементы интерфейса</string>
+    <string name="agent_executor_r2">Выбирает следующий шаг согласно плану</string>
+    <string name="agent_executor_r3">Определяет касания, свайпы, ввод текста и т. п.</string>
+    <string name="agent_executor_r4">Выдаёт точные координаты и параметры действия</string>
+    <string name="agent_reflector_role">Рефлектор</string>
+    <string name="agent_reflector_desc">Оценивает результат каждого действия и определяет, успешно ли оно.</string>
+    <string name="agent_reflector_r1">Сравнивает экран до и после действия</string>
+    <string name="agent_reflector_r2">Определяет, достигнут ли ожидаемый результат</string>
+    <string name="agent_reflector_r3">Выявляет аномалии (диалоги, ошибки)</string>
+    <string name="agent_reflector_r4">Даёт обратную связь для корректировки стратегии</string>
+    <string name="agent_notetaker_role">Регистратор</string>
+    <string name="agent_notetaker_desc">Фиксирует ключевую информацию во время выполнения, чтобы ей могли пользоваться другие агенты.</string>
+    <string name="agent_notetaker_r1">Записывает важные контрольные точки выполнения</string>
+    <string name="agent_notetaker_r2">Сохраняет промежуточные результаты и состояние</string>
+    <string name="agent_notetaker_r3">Предоставляет контекст для следующих шагов</string>
+    <string name="agent_notetaker_r4">Формирует сводку и журнал выполнения</string>
+
+    <!-- Capabilities - Built-in tools -->
+    <string name="tool_screenshot_desc">Снимок текущего экрана для анализа ИИ</string>
+    <string name="tool_tap_desc">Касание экрана в заданных координатах</string>
+    <string name="tool_swipe_desc">Свайп в любом направлении</string>
+    <string name="tool_type_desc">Ввод текста в текущее поле</string>
+    <string name="tool_press_key_desc">Нажатие системной клавиши (Home, Back, Enter, …)</string>
+</resources>

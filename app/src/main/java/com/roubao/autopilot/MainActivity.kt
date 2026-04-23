@@ -327,7 +327,7 @@ class MainActivity : ComponentActivity() {
                                         result.onSuccess { models ->
                                             onSuccess(models)
                                         }.onFailure { error ->
-                                            onError(error.message ?: "未知错误")
+                                            onError(error.message ?: getString(R.string.error_unknown))
                                         }
                                     }
                                 }
@@ -610,15 +610,15 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun generateTitle(instruction: String): String {
-        // 生成简短标题（按关键词匹配，兼容中/英/乌）
+        // 生成简短标题（按关键词匹配，兼容中/英/乌/俄）
         val keywords = listOf(
-            listOf("打开", "open", "відкр") to R.string.title_open_app,
-            listOf("点餐", "order", "замов") to R.string.title_order,
-            listOf("发", "send", "надісл", "відправ") to R.string.title_send_message,
-            listOf("看", "browse", "перегля") to R.string.title_browse,
-            listOf("搜", "search", "шук") to R.string.title_search,
-            listOf("设置", "settings", "налашт") to R.string.title_settings,
-            listOf("播放", "play", "відтвор") to R.string.title_play_media
+            listOf("打开", "open", "відкр", "откр") to R.string.title_open_app,
+            listOf("点餐", "order", "замов", "заказ") to R.string.title_order,
+            listOf("发", "send", "надісл", "відправ", "отправ", "напиш") to R.string.title_send_message,
+            listOf("看", "browse", "перегля", "посмотр", "смотр") to R.string.title_browse,
+            listOf("搜", "search", "шук", "поиск", "найд") to R.string.title_search,
+            listOf("设置", "settings", "налашт", "настр") to R.string.title_settings,
+            listOf("播放", "play", "відтвор", "воспр", "включ") to R.string.title_play_media
         )
         val lower = instruction.lowercase()
         for ((keys, titleRes) in keywords) {
