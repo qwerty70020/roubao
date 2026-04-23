@@ -170,6 +170,7 @@
     <string name="toast_sensitive_page">检测到敏感页面（支付/密码），已安全停止</string>
     <string name="toast_max_steps">达到最大步数限制</string>
     <string name="toast_error">错误: %1$s</string>
+    <string name="error_unknown">未知错误</string>
     <string name="toast_checking_shizuku">正在检查 Shizuku 状态…</string>
     <string name="toast_authorize_shizuku_popup">请在弹窗中授权 Shizuku</string>
     <string name="toast_task_stopped">任务已停止</string>

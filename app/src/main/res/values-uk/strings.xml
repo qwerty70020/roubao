@@ -170,6 +170,7 @@
     <string name="toast_sensitive_page">Виявлено чутливу сторінку (оплата/пароль), безпечно зупинено</string>
     <string name="toast_max_steps">Досягнуто ліміт кроків</string>
     <string name="toast_error">Помилка: %1$s</string>
+    <string name="error_unknown">Невідома помилка</string>
     <string name="toast_checking_shizuku">Перевіряємо стан Shizuku…</string>
     <string name="toast_authorize_shizuku_popup">Надайте дозвіл Shizuku у діалозі</string>
     <string name="toast_task_stopped">Завдання зупинено</string>
